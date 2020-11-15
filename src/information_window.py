@@ -1,7 +1,6 @@
 #!/bin/python3
 
 from PyQt5 import QtCore,  QtWidgets
-from threading import Thread
 from os import popen
 import src.style_sheet as style_sheet
 

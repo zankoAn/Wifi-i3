@@ -1,9 +1,9 @@
 #!/bin/pytohn3.8
 
-from PyQt5 import QtGui, QtWidgets
+from PyQt5 import QtGui
 from PyQt5.QtCore import Qt, QRect, QTimer, QMetaObject
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QMenu , QFileDialog, QDialog,
-        QVBoxLayout, QPushButton, QGroupBox, QFormLayout, QLabel, QScrollArea, QAction)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QMenu , QDialog,
+        QMessageBox, QPushButton, QGroupBox, QFormLayout, QLabel, QScrollArea, QAction)
 
 from os import system, popen , getcwd
 
@@ -76,18 +76,18 @@ class WIFI_(QMainWindow):
                 )  # Split ssid  signal and bssid of out put somthing like that ['status', 'ssid', 'bssid' ]
         
         if wifi.communicate()[1]:
-            msgBox = QtWidgets.QMessageBox()
-            msgBox.setIcon(QtWidgets.QMessageBox.Critical)
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Critical)
             msgBox.setText(wifi.communicate()[1].decode())
                 
             msgBox.setStyleSheet("background-color:#15171a;color:#5aa1a1")
             msgBox.setWindowTitle("NetworkManager Error")
             msgBox.setFont(QtGui.QFont('vazir',12))
-            msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            msgBox.setStandardButtons(QMessageBox.Ok)
             msgBox.setGeometry(840,170,0,0)
             returnValue = msgBox.exec_()
                 
-            if returnValue == QtWidgets.QMessageBox.Ok:
+            if returnValue == QMessageBox.Ok:
                 sys.exit()
                 
         else: 

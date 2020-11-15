@@ -1,0 +1,218 @@
+[global]
+
+font = DejaVu Sans Mono 10
+markup = full 
+format = "<b>%s</b>\n%b"
+
+
+########################################
+#       Sort messages by urgency       #
+########################################
+sort = no
+
+#######################################################################
+# Show how many messages are currently hidden (because of geometry).  #
+#######################################################################
+indicate_hidden = yes
+
+
+#############################################################
+#      Alignment of message text                            #
+#     Possible values are "left", "center" and "right"      #
+#############################################################
+alignment = center
+
+
+#############################################################################
+#     The frequency with wich text that is longer than the notification     #
+#     window allows bounces back and forth                                  #
+#     This option conflicts with "word_wrap".                               #
+#     Set to 0 to disable.                                                  #
+#############################################################################
+bounce_freq = 0
+
+
+
+####################################################################################
+#     Show age of message if message is older than show_age_threshold seconds.     #                                                                     
+#     Set to -1 to disable.                                                        #
+####################################################################################
+show_age_threshold = -1
+
+
+####################################################################################
+#      Split notifications into multiple lines if they don't fit into geometry.    #
+####################################################################################
+word_wrap = yes
+
+
+################################################
+#    Ignore newlines '\n' in notifications.    #
+################################################
+ignore_newline = no
+
+
+####################################################
+#      Hide duplicate's count and stack them       #
+####################################################
+stack_duplicates = yes
+hide_duplicates_count = yes
+
+
+#############################################
+#     The geometry of the window:           #
+#     [{width}]x{height}[+/-{x}+/-{y}]      #
+#############################################
+geometry = "320x50-523+28"
+
+
+###################################################################################
+# Shrink window if it's smaller than the width.  Will be ignored if width is 0.   #
+###################################################################################
+shrink = no
+
+
+###############################################################
+#      The transparency of the window.  Range: [0; 100]       #
+###############################################################
+#transparency = 5
+
+
+###############################################################################
+# Don't remove messages, if the user is idle (no mouse or keyboard input)     #
+# for longer than idle_threshold seconds.                                     #
+# Set to 0 to disable.                                                        #
+###############################################################################
+idle_threshold = 0
+
+
+#################################################################
+#     Which monitor should the notifications be displayed on.   #
+################################################################
+monitor = 0
+
+
+
+##########################################################################
+#    Display notification on focused monitor.  Possible modes are:       #
+#    mouse: follow mouse pointer                                         #
+#    keyboard: follow window with keyboard focus                         #
+##########################################################################
+follow = none
+
+
+
+###########################################################################
+#   Should a notification popped up from history be sticky or timeout     #
+#   as if it would normally do.                                           #
+###########################################################################
+sticky_history = yes
+
+
+#########################################################
+#    Maximum amount of notifications kept in history    #
+#########################################################
+history_length = 20
+
+
+#########################################################
+#    Display indicators for URLs (U) and actions (A).   #
+#########################################################
+show_indicators = no
+
+
+#############################################
+#    The height of a single line.           #
+#############################################
+line_height = 3
+
+
+#####################################################################################
+#    Draw a line of "separatpr_height" pixel height between two  notifications.     #
+#    Set to 0 to disable.                                                           #
+#####################################################################################
+separator_height = 2
+
+
+#############################################
+#    Padding between text and separator.    #
+#############################################
+padding = 6
+
+
+#############################################
+#    Horizontal padding.                    #
+#############################################
+horizontal_padding = 6
+
+
+#############################################################################
+#    Define a color for the separator.                                      #
+#    possible values are:                                                   #
+#       * auto: dunst tries to find a color fitting to the background;      # 
+#       * foreground: use the same color as the foreground;                 #
+#       * frame: use the same color as the frame;                           #
+#       * anything else will be interpreted as a X color.                   #  
+#############################################################################
+separator_color = frame
+
+
+#########################################################################
+#   Print a notification on startup.                                    #
+#   This is mainly for error detection, since dbus (re-)starts dunst    #
+#    automatically after a crash.                                       #
+#########################################################################
+startup_notification = false
+
+
+###################################################
+#    Browser for opening urls in context menu.    #
+###################################################
+browser = /usr/bin/firefox -new-tab
+
+
+
+#############################################
+#     Align icons left/right/off            #
+#############################################
+icon_position = left
+max_icon_size = 80
+
+
+
+#############################################
+#       icon_path = /usr/share/icons/..../  #
+#############################################
+
+frame_width = 3
+
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
+
+[urgency_low]
+background = "#2f343f"
+foreground = "#aac2f4"
+frame_color = "#AAC2F4"
+timeout = 4
+
+
+[urgency_normal]
+background = "#2f343f"
+foreground = "#0e8775"
+frame_color = "#0e8775"
+timeout = 6
+
+
+[urgency_critical]
+background = "#2f343f"
+foreground = "#d8dee8"
+frame_color = "#bf616a"
+timeout = 0
+
+
+
+
