@@ -1,6 +1,6 @@
 [global]
 
-font = DejaVu Sans Mono 10
+font = Vazir Thin
 markup = full 
 format = "<b>%s</b>\n%b"
 
