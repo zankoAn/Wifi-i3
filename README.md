@@ -2,7 +2,7 @@
 This is a GUI app to connect Wifi in window manager i3 on linux And other places !!
 
 
-![Wifi-i3](https://user-images.githubusercontent.com/45467643/122682632-e39d2080-d20f-11eb-8c29-f71ce312c988.png)
+![Wifi-i3](https://user-images.githubusercontent.com/45467643/122683043-252ecb00-d212-11eb-95dc-44bf90ac55e6.png)
 
 
 
