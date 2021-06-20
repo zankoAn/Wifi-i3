@@ -38,17 +38,29 @@ Add the following line to the i3 config file
 If you are using i3block, you can add the following lines to the i3blocks.conf
 
 > ########################################
+> 
 > \#          Iface Config                \#
+> 
 > ########################################
+> 
 > [State]
+> 
 > full_text=" "
+> 
 > command=~/Wifi-i3/wifi.py
+> 
 > separator_block_width=0
+> 
 > border_top=0
+> 
 > border_left=0
+> 
 > border_right=0
+> 
 > border_bottom=3
+> 
 > border=#33bd96
+> 
 > color=#33bd96
 
 
