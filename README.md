@@ -10,6 +10,7 @@ This is a GUI app to connect Wifi in window manager i3 on linux And other places
 
 <br />
 <br />
+
 ### Requirements
 
 > 
@@ -20,6 +21,7 @@ This is a GUI app to connect Wifi in window manager i3 on linux And other places
 
 <br />
 <br />
+
 ### Instalation
 
 > - pip install -r requirements.txt
@@ -29,6 +31,7 @@ This is a GUI app to connect Wifi in window manager i3 on linux And other places
 
 <br />
 <br />
+
 ### i3 Config
 
 If you are using i3 Window Manager, you can follow the instructions below.
@@ -39,6 +42,7 @@ Add the following line to the i3 config file
 
 <br />
 <br />
+
 ### i3blocks config
 If you are using i3block, you can add the following lines to the i3blocks.conf
 
@@ -71,6 +75,7 @@ If you are using i3block, you can add the following lines to the i3blocks.conf
 <br />
 <br />
 <br />
+
 ### Note 
 
 - _To use this tool you need to set the **wifi.py  PATH** inside the **i3blocks.conf**  (command=wifi.py) , you must also move the **dunstrc** file to **~/.i3/** (If your i3 config is here) and **chmod +x wifi.py**_
