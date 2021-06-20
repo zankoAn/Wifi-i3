@@ -74,7 +74,6 @@ If you are using i3block, you can add the following lines to the i3blocks.conf
 
 <br />
 <br />
-<br />
 
 ### Note 
 
