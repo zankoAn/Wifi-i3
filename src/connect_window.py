@@ -15,8 +15,11 @@ class GetPass(object):
         """
             This function is for the default password label style
         """
+        resolution = popen("xdpyinfo | grep dimensions | awk '{printf $2}'| cut -f 1 -d 'x'").read()                                                                         
+        width = int(resolution.strip())-295   
+
         Dialog.setFixedSize(260, 220)
-        Dialog.setGeometry(1080, 30, 190, 300)
+        Dialog.setGeometry(width, 35, 190, 300)
         Dialog.setObjectName("i3 Wi-Fi_M")
         Dialog.setWindowTitle("Authentication Wi-Fi")
         Dialog.setStyleSheet("background-color:#15171a; border:0px; padding:0px;   margin: 0px 0px 0px 0px")
@@ -208,7 +211,8 @@ class GetPass(object):
                     self.ssid_lineEdit.setReadOnly(False)
                     self.pass_disable()
                     self.ssid_label_disable()
-                self.Dialog.setGeometry(1080, 30, 190, 300)
+
+                self.Dialog.setGeometry(width, 35, 190, 300)
                 self.Dialog.show()
             else:
                 self.close_window(self.Dialog)

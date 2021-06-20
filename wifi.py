@@ -1,4 +1,4 @@
-#!/bin/pytohn3.8
+#!/bin/python
 
 from PyQt5 import QtGui
 from PyQt5.QtCore import Qt, QRect, QTimer, QMetaObject
@@ -12,7 +12,7 @@ from subprocess import run, PIPE, Popen
 from src.connect_window import GetPass
 from src.information_window import Info
 import src.style_sheet as style_sheet
-
+import time
 
 class WIFI_(QMainWindow):
     def setupUi(self, Dialog):
@@ -21,7 +21,11 @@ class WIFI_(QMainWindow):
         Dialog.setWindowTitle("i3 Wi-Fi_M ")
         Dialog.setObjectName("i3 Wi-Fi_M")
         Dialog.setStyleSheet("background-color:#15171a")
-        Dialog.setGeometry(1120, 30, 190, 300)
+
+        resolution = popen("xdpyinfo | grep dimensions | awk '{printf $2}'| cut -f 1 -d 'x'").read()
+        self.width = int(resolution.strip())-245
+
+        Dialog.setGeometry(self.width, 30, 190, 310)
         
         self.groupBox = QGroupBox()
         self.formLayout = QFormLayout()
@@ -69,6 +73,7 @@ class WIFI_(QMainWindow):
         """
             This function is for handling the crashing Wi-Fi scan
         """
+
         app.processEvents()
      
         wifi =  Popen("nmcli -t -f  active,ssid,signal,bssid dev wifi | sort -r ",\
@@ -84,7 +89,11 @@ class WIFI_(QMainWindow):
             msgBox.setWindowTitle("NetworkManager Error")
             msgBox.setFont(QtGui.QFont('vazir',12))
             msgBox.setStandardButtons(QMessageBox.Ok)
-            msgBox.setGeometry(840,170,0,0)
+
+            geometry_menu = self.Dialog.geometry()
+#            self.setGeometry(geometry_menu.x()+1000, geometry_menu.y(), 100, 100)
+            msgBox.setGeometry(geometry_menu.x()-325, geometry_menu.y()+60, 0, 0)
+# 840,170,0,0)
             returnValue = msgBox.exec_()
                 
             if returnValue == QMessageBox.Ok:
@@ -92,7 +101,6 @@ class WIFI_(QMainWindow):
                 
         else: 
             self.wifi_  = [x for x in wifi.communicate()[0].decode().split('\n') if x]
-     
         self.timer.stop()
         self.scan()
      
@@ -188,7 +196,7 @@ class WIFI_(QMainWindow):
             menu.addAction(QAction(QtGui.QIcon(f"{self.current_path}/icons/info-64.png"), 'Info', self))
             menu.setStyleSheet(style_sheet.menu_style())
             geometry_menu = self.Wifi_Info.geometry()
-            self.setGeometry(geometry_menu.x()+1000, geometry_menu.y()+90, 100, 100)
+            self.setGeometry(geometry_menu.x()+self.width, geometry_menu.y()+90, 100, 100)
             action = menu.exec_(self.mapToGlobal(event))
             
             try:

@@ -9,8 +9,11 @@ class Info:
         Dialog.setWindowTitle("Information")
         Dialog.setObjectName("Information")
         Dialog.setStyleSheet("background-color:#15171a")
+        resolution = popen("xdpyinfo | grep dimensions | awk '{printf $2}'| cut -f 1 -d 'x'").read()
+        width = int(resolution.strip())-380
+
         Dialog.setFixedSize(230,230)
-        Dialog.setGeometry(930,80,190,300)
+        Dialog.setGeometry(width,140,120,300)
     
         Bssid = Bssid.replace(':', '\\\:')
         Get_Info = popen(f"nmcli -t -f IN-USE,SSID,SECURITY,SIGNAL,BARS,FREQ,BSSID \
